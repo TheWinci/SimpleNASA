@@ -3,12 +3,12 @@ const app = require('express')();
 app.get('/', (req, res) => {
   res.json(
     {
-      message: 'hello from base route'
+      message: 'hello from nasa route'
     }
   );
 });
 
-app.use('/nasa', require('./nasa'));
+app.use('/apod', require('./apod'));
 
 app.all('*', (req, res) => {
   res.status(404).json(
